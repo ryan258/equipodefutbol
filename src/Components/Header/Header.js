@@ -3,6 +3,8 @@ import { AppBar, Toolbar, Button } from '@material-ui/core'
 // we can't use <a> w/ react-router-dom, so we must use <Link>
 import { Link } from 'react-router-dom'
 
+import { CityLogo } from '../Utils/tools'
+
 // import
 
 const Header = () => {
@@ -22,7 +24,14 @@ const Header = () => {
         }}
       >
         <div style={{ flexGrow: 1 }}>
-          <div className="header_logo">logo</div>
+          <div className="header_logo">
+            <CityLogo //
+              link={true}
+              linkTo={'/'}
+              width="70px"
+              height="70px"
+            />
+          </div>
         </div>
         <Link to="/the_team">
           <Button color="inherit">The team</Button>
