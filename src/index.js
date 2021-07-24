@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom'
 
 import './Resources/css/app.css'
 
+import { firebase } from './firebase'
+
 import Routes from './routes'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Routes />
-  </React.StrictMode>,
-  document.getElementById('root')
-)
+const App = (props) => {
+  return <Routes {...props} />
+}
+
+// whenever there is an auth change the callback fn will fire
+firebase.auth().onAuthStateChanged((user) => {
+  // console.log(user) // we see logged in user data or null
+  ReactDOM.render(<App user={user} />, document.getElementById('root'))
+})
