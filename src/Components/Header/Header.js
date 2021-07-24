@@ -6,18 +6,19 @@ import { firebase } from '../../firebase'
 
 import { AppBar, Toolbar, Button } from '@material-ui/core'
 import { CityLogo } from '../Utils/tools'
+import { showSuccessToast, showErrorToast } from '../Utils/tools'
 
 // import
 
-const Header = ({ user }) => {
+const Header = ({ user, history }) => {
   const logoutHandler = () => {
     firebase
       .auth()
       .signOut()
       .then(() => {
-        console.log('logging out')
+        showSuccessToast('Goodbye! 👋🏻')
       })
-      .catch((error) => console.log(error))
+      .catch((error) => showErrorToast(error.message))
   }
 
   return (

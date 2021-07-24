@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import { firebase } from '../firebase'
 
 import { CircularProgress } from '@material-ui/core'
-import { Redirect } from 'react-router-dom'
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 // yup docs: https://github.com/jquense/yup
+import { showSuccessToast, showErrorToast } from '../Components/Utils/tools'
 
 const SignIn = (props) => {
   const [loading, setLoading] = useState(false)
@@ -34,6 +35,7 @@ const SignIn = (props) => {
       .signInWithEmailAndPassword(values.email, values.password)
       .then(() => {
         // show success toast
+        showSuccessToast('You are now logged in! 👻')
         // redirect user
         props.history.push('/dashboard')
       })
@@ -41,6 +43,7 @@ const SignIn = (props) => {
         console.log(error)
         setLoading(false)
         // show a toast error
+        showErrorToast('You did not enter the droids we are looking for...', error.message)
       })
   }
 
