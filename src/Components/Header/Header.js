@@ -1,13 +1,25 @@
 import React from 'react'
-import { AppBar, Toolbar, Button } from '@material-ui/core'
 // we can't use <a> w/ react-router-dom, so we must use <Link>
 import { Link } from 'react-router-dom'
 
+import { firebase } from '../../firebase'
+
+import { AppBar, Toolbar, Button } from '@material-ui/core'
 import { CityLogo } from '../Utils/tools'
 
 // import
 
-const Header = () => {
+const Header = ({ user }) => {
+  const logoutHandler = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        console.log('logging out')
+      })
+      .catch((error) => console.log(error))
+  }
+
   return (
     <AppBar //
       position="fixed"
@@ -39,9 +51,17 @@ const Header = () => {
         <Link to="/the_matches">
           <Button color="inherit">Matches</Button>
         </Link>
-        <Link to="/dashboard">
-          <Button color="inherit">Dashboard</Button>
-        </Link>
+        {user && (
+          <>
+            <Link to="/dashboard">
+              <Button color="inherit">Dashboard</Button>
+            </Link>
+
+            <Button color="inherit" onClick={() => logoutHandler()}>
+              Log out
+            </Button>
+          </>
+        )}
       </Toolbar>
     </AppBar>
   )

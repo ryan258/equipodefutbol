@@ -13,8 +13,8 @@ const SignIn = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: ''
+      email: 'manny@manny.com',
+      password: 'beepbeep'
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Invalid email 🤔').required('The email is required'),
