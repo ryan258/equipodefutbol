@@ -48,33 +48,39 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="container">
-      <div className="signin_wrapper" style={{ margin: '100px' }}>
-        {/* when you create a form it needs an onSubmit */}
-        <form onSubmit={formik.handleSubmit}>
-          <h2>Sign the 🤗 in!</h2>
-          <input //
-            name="email"
-            placeholder="Insert email here"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email} // to make it a controlled component
-          />
-          {formik.touched.email && formik.errors.email ? <div className="error_label">{formik.errors.email}</div> : null}
-          <input //
-            name="password"
-            type="password"
-            placeholder="Insert password here"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.password} // to make it a controlled component
-          />
-          {formik.touched.password && formik.errors.password ? <div className="error_label">{formik.errors.password}</div> : null}
+    <>
+      {!props.user ? (
+        <div className="container">
+          <div className="signin_wrapper" style={{ margin: '100px' }}>
+            {/* when you create a form it needs an onSubmit */}
+            <form onSubmit={formik.handleSubmit}>
+              <h2>Sign the 🤗 in!</h2>
+              <input //
+                name="email"
+                placeholder="Insert email here"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email} // to make it a controlled component
+              />
+              {formik.touched.email && formik.errors.email ? <div className="error_label">{formik.errors.email}</div> : null}
+              <input //
+                name="password"
+                type="password"
+                placeholder="Insert password here"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password} // to make it a controlled component
+              />
+              {formik.touched.password && formik.errors.password ? <div className="error_label">{formik.errors.password}</div> : null}
 
-          {loading ? <CircularProgress color="secondary" className="progress" /> : <button type="submit">Log in</button>}
-        </form>
-      </div>
-    </div>
+              {loading ? <CircularProgress color="secondary" className="progress" /> : <button type="submit">Log in</button>}
+            </form>
+          </div>
+        </div>
+      ) : (
+        <Redirect to={'/dashboard'} />
+      )}
+    </>
   )
 }
 
