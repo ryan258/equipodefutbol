@@ -19,7 +19,6 @@ const Routes = ({ user }) => {
     <BrowserRouter>
       {/* now we can pass user from props to the header that the user is logged in */}
       <Header user={user} />
-      <h1>moo 🐮</h1>
       <Switch>
         <Route exact path="/dashboard" component={AuthGuard(Dashboard)} />
         {/* remeber route gives us some props */}

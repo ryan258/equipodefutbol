@@ -148,7 +148,7 @@ button {
 }
 
 /*=============================
-            HEADER FOOTER
+          HEADER FOOTER
 ===============================*/
 
 footer {
@@ -167,7 +167,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            FEATURED
+          FEATURED
 ===============================*/
 
 .featured_wrapper {
@@ -225,7 +225,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            MATCHES HOME
+          MATCHES HOME
 ===============================*/
 
 .home_matches_wrapper {
@@ -251,7 +251,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            MATCHES BLOCK
+          MATCHES BLOCK
 ===============================*/
 
 .match_block .match_date {
@@ -387,7 +387,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            MATCHES BLOCK
+          MATCHES BLOCK
 ===============================*/
 
 .home_meetplayers {
@@ -412,7 +412,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            MATCHES BLOCK
+          MATCHES BLOCK
 ===============================*/
 
 .player_card_wrapper {
@@ -457,7 +457,7 @@ footer .footer_discl {
 }
 
 /*=============================
-         PROMOTION
+       PROMOTION
 ===============================*/
 
 .promotion_wrapper {
@@ -526,7 +526,7 @@ footer .footer_discl {
 }
 
 /*=============================
-         THE MATCHES
+       THE MATCHES
 ===============================*/
 
 .the_matches_container {
@@ -570,12 +570,11 @@ footer .footer_discl {
 }
 
 /*=============================
-         ADMIN
+       ADMIN
 ===============================*/
 
 .admin_container {
-  /* margin-top: 96px; */
-  margin-top: 32px;
+  margin-top: 96px;
   display: flex;
 }
 
@@ -648,7 +647,7 @@ footer .footer_discl {
 }
 
 /*=============================
-         THE TEAM
+       THE TEAM
 ===============================*/
 
 .the_team_container {
@@ -678,7 +677,7 @@ footer .footer_discl {
 }
 
 /*=============================
-            SIGN IN
+          SIGN IN
 ===============================*/
 
 .signin_wrapper {

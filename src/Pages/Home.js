@@ -1,9 +1,13 @@
 import React from 'react'
+import Featured from '../Components/Featered/Featured'
+// import Test from '../Components/Featered/Test'
 
 const Home = () => {
   return (
     <div>
-      <h1>home</h1>
+      <div className="bck_blue">
+        <Featured />
+      </div>
     </div>
   )
 }
