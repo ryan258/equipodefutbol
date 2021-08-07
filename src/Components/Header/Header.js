@@ -2,25 +2,12 @@ import React from 'react'
 // we can't use <a> w/ react-router-dom, so we must use <Link>
 import { Link } from 'react-router-dom'
 
-import { firebase } from '../../firebase'
-
 import { AppBar, Toolbar, Button } from '@material-ui/core'
-import { CityLogo } from '../Utils/tools'
-import { showSuccessToast, showErrorToast } from '../Utils/tools'
+import { CityLogo, logoutHandler } from '../Utils/tools'
 
 // import
 
 const Header = ({ user, history }) => {
-  const logoutHandler = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        showSuccessToast('Goodbye! 👋🏻')
-      })
-      .catch((error) => showErrorToast(error.message))
-  }
-
   return (
     <AppBar //
       position="fixed"
